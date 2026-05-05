@@ -1,0 +1,39 @@
+# OS FILES
+.DS_Store
+Thumbs.db
+
+# IDE / EDITOR
+.idea/
+.vscode/
+*.code-workspace
+*.iml
+*.xml
+
+# PYTHON
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VIRTUAL ENVIRONMENTS
+.venv/
+venv/
+env/
+.env
+
+# LOGS
+*.log
+
+# EXPERIMENT OUTPUTS
+src/experiments/data/
+src/experiments/caches/
+src/experiments/results/
+src/experiments/summary_results/
+
+*.pkl
+*.npy
+*.npz
+
+# TEMP / NOTEBOOK
+.ipynb_checkpoints/
+
