@@ -271,8 +271,24 @@ def create_combined_metric_table_compact(
         .rename(r"$\mathrm{CR}_1$")
     )
 
-    # Combine (same spirit as combined table)
-    table = pd.concat([rs, rs1, rs2, w, mae, cr1], axis=1).reset_index()
+    # Subset only cases CR = 1
+    df_cr1_subset = df_min[df_min["is_minimal"] == 1]
+
+    # set greedy or optimal size = 1
+    set_is_one = (
+        df_cr1_subset
+        .assign(set_is_one=(
+            (df_cr1_subset["Optimal_size"] == 1)
+        ).astype(float))
+        .groupby(["model", "dataset"], observed=True)["set_is_one"]
+        .mean()
+        .rename(r"$\mathrm{SR}$")
+    )
+
+    table = pd.concat(
+        [rs, rs1, rs2, w, mae, cr1, set_is_one],
+        axis=1
+    ).reset_index()
 
     table = table.sort_values(["model", "dataset"])
     table.iloc[:, 2:] = table.iloc[:, 2:].round(2)
