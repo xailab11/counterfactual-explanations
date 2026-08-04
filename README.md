@@ -5,6 +5,21 @@ Given a retrieved subgraph and a natural-language query, the goal is to identify
 graph elements whose modification leads to a significant semantic change in the generated answer.
 
 ---
+## Citation
+
+If you use this code or build upon our work, please cite the following paper:
+
+```bibtex
+@InProceedings{counterfactual_explanations,
+  author    = {Buchmann, Sara and Slany, Emanuel and Scheele, Stephan},
+  title     = {How Graphs Ground Large Language Models: Counterfactuals for Subgraph Verbalizations},
+  booktitle = {The Semantic Web -- ISWC 2026},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer Nature Switzerland},
+  year      = {2026},
+  note      = {To appear}
+}
+```
 
 ## Overview
 
